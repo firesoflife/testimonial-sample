@@ -1,0 +1,170 @@
+// General Styles / Reset / Layout
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Spartan', sans-serif;
+  line-height: 2.5rem;
+  position: relative;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 10rem 14rem;
+  // max-width: 1080px;
+
+  .grid {
+    display: grid;
+    max-width: 1080px;
+    margin: auto;
+    height: 100%;
+    grid-template-rows: repeat(2, 1fr);
+
+    &__row-1 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
+
+    &__text {
+      max-width: 30rem;
+
+      & h1 {
+        color: $color-primary;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      & p {
+        font-size: 1.2rem;
+
+        &.lead {
+          color: $color-dark;
+        }
+      }
+    }
+
+    &__ratings {
+      display: flex;
+      flex-direction: column;
+
+      & .rating {
+        color: $color-primary;
+        background-color: $color-light;
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        text-align: left;
+        width: 40rem;
+
+        &.rating-1 {
+          margin-left: -50px;
+        }
+
+        &.rating-3 {
+          margin-left: 50px;
+        }
+
+        &__rating-1,
+        &__rating-2,
+        &__rating-3 {
+          display: flex;
+          align-items: center;
+          text-align: center;
+
+          & .icons {
+            padding-top: 0.5rem;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+
+    .testimonials {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+    }
+    .testimonial {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      max-width: 30%;
+      width: 35rem;
+      align-content: center;
+      background-color: $color-primary;
+      height: 24rem;
+      padding: 0 2.3rem;
+      border-radius: 10px;
+
+      &.box-2 {
+        align-self: center;
+      }
+
+      &.box-3 {
+        align-self: end;
+      }
+
+      img {
+        border-radius: 50px;
+        height: 50px;
+      }
+
+      &__name {
+        margin-left: -2rem;
+        color: $color-white;
+
+        & p {
+          color: $color-secondary;
+        }
+      }
+
+      &__quote {
+        font-weight: 500;
+        font-size: 1.2rem;
+        grid-column: 1 / 3;
+        color: $color-light;
+      }
+    }
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('/img/bg-pattern-top-desktop.svg') no-repeat;
+    background-size: 375px;
+    z-index: -2;
+  }
+  .background-bottom {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 20vh;
+    right: 0;
+    overflow: hidden;
+    z-index: -2;
+
+    background: url('/img/bg-pattern-bottom-desktop.svg') no-repeat;
+    background-size: 100%;
+  }
+}
